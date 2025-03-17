@@ -1,0 +1,14 @@
+plugins {
+    id 'ear'
+}
+
+dependencies {
+    deploy project(':my-library') 
+    deploy project(':my-webapp') 
+}
+
+ear {
+    deploymentDescriptor {
+        applicationName = "MyEnterpriseApp"
+    }
+}

@@ -1,0 +1,18 @@
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="javax.annotation.api"/>
+            <module name="javax.ejb.api"/>
+            <module name="javax.jms.api"/>
+            <module name="javax.persistence.api"/>
+            <module name="javax.xml.bind.api"/>
+            <module name="org.apache.commons.lang" export="true"/>
+            <module name="org.apache.commons.io"   export="true"/>
+            <module name="org.apache.httpcomponents"   export="true"/>
+            <module name="org.apache.xerces"       export="true"/>
+            <module name="org.jdom"                export="true"/>
+            <module name="net.sf.saxon"            export="true"/>
+            <module name="org.quartz"              export="true"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

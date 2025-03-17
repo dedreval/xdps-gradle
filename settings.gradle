@@ -1,0 +1,8 @@
+rootProject.name = 'my-enterprise-project'
+
+include 'cms-lib'
+include 'cms-ear'
+include 'my-library'
+include 'my-webapp'
+include 'my-ear'
+

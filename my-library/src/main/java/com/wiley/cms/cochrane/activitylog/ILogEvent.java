@@ -1,0 +1,165 @@
+package com.wiley.cms.cochrane.activitylog;
+
+/**
+ * @author <a href='mailto:gkhristich@wiley.ru'>Galina Khristich</a>
+ *         Date: 30-Mar-2007
+ */
+public interface ILogEvent {
+    int EXCEPTION = 1;
+    int NEW_PACKAGE_RECEIVED = 2;
+    int DATA_EXTRACTION_FAILED = 3;
+    int PACKAGE_UNZIPPED = 4;
+    int RECORDS_CREATED = 5;
+    int QAS_STARTED = 6;
+    int QAS_RESULTS_ACCEPTED = 7;
+    int PACKAGE_DOWNLOAD_STARTED = 8;
+    int QAS_PASSED = 9;
+    int QAS_FAILED = 10;
+    int QAS_ACCEPT_FAILED = 11;
+    int RND_STARTED = 12;
+    int RND_NOT_STARTED = 13;
+    int RND_RESULTS_ACCEPTED = 14;
+    int RND_COMPLETED = 15;
+    int RND_PASSED = 16;
+    int RND_FAILED = 17;
+    int ACCEPT_RND_RESULTS_FAILED = 18;
+    int DELETE = 19;
+
+    @Deprecated
+    int MAKE_PERM = 20;
+    
+    int UNAPPROVE = 21;
+    int REJECT = 22;
+    int UNREJECT = 23;
+    int RESUME = 24;
+    int APPROVE = 25;
+    int PUBLISH = 26;
+
+    @Deprecated
+    int UNPUBLISH = 27;
+
+    int APPROVE_RND = 28;
+    int UNAPPROVE_RND = 29;
+    int REJECT_RND = 30;
+    int UNREJECT_RND = 31;
+    int EDIT = 32;
+    int EXPORT_STARTED = 33;
+    int EXPORT_SUCCESSFUL = 34;
+    int EXPORT_FAILED = 35;
+    int EXPORT_COMPLETED = 36;
+    int PUBLISH_SUCCESSFUL = 37;
+    int PUBLISH_FAILED = 38;
+    int PUBLISH_COMPLETED = 39;
+    int LOADING_COMPLETED = 40;
+    int COMMENTED = 41;
+    int ARCHIVED = 42;
+    int ARCHIVED_FAILED = 43;
+    int ARCHIVE_STARTED = 44;
+    int DELETE_FAILED = 45;
+    int TERM2NUM_REBUILD_STARTED = 46;
+    int TERM2NUM_FORCE_REBUILD_STARTED = 47;
+    int TERM2NUM_FAILED = 48;
+    int TERM2NUM_COMPLETED = 49;
+    int MESHTERM_UPDATER_STARTED = 50;
+    int MESHTERM_UPDATER_COMPLETED = 51;
+    int MESHTERM_UPDATER_FAILED = 52;
+    int MESHTERMS_DOWNLOADED = 53;
+    int MESHTERMS_DOWNLOADER_STARTED = 54;
+    int PUBLISH_UNPACKING_FAILED = 55;
+    int PUBLISH_UNPACKING_SUCCESS = 56;
+    int PROTOCOL_DELETION_FAILED = 57;
+    int PROTOCOL_DELETION_SUCCESS = 58;
+    int CHECK_CHANGES_MESH_CODES_STARTED = 59;
+    int CHECK_CHANGES_MESH_CODES_FAILED = 60;
+    int CONVERSION_TO_3G_STARTED = 61;
+    int CONVERSION_REVMAN_FAILED = 62;
+    int REVMAN_DATA_CONVERTED = 63;
+    int CONVERSION_TO_3G_COMPLETED = 64;
+    int CONVERSION_TO_3G_FAILED = 65;
+
+    @Deprecated
+    int WR_NOTIFICATION = 66;
+
+    int CONVERSION_REVMAN_STARTED = 67;
+    int CDSR_CONNECTED_WITH_CCA_REPORT = 68;
+    int CLEARING_STARTED = 69;
+    int CLEARING_COMPLETED = 70;
+    int CLEARING_FAILED = 71;
+    int SUSPEND_NOTIFICATION = 72;
+
+    @Deprecated
+    int SEND_TIBCO_NOTIFICATION = 73;
+
+    @Deprecated
+    int ML_COPY_STARTED = 74;
+    @Deprecated
+    int ML_COPY_COMPLETED = 75;
+    @Deprecated
+    int ML_COPY_FAILED = 76;
+
+    int GET_PUBLISH_NOTIFICATION = 77;
+
+    @Deprecated
+    int EPOCH_NOTIFICATION = 78;
+
+    @Deprecated
+    int LM_CACHE_REFRESH_STARTED = 79;
+    @Deprecated
+    int LM_CACHE_REFRESH_COMPLETED = 80;
+    @Deprecated
+    int LM_CALL_FAILED = 81;
+
+    int PROCESS_STARTED = 82;
+    int PROCESS_COMPLETED = 83;
+    int PROCESS_FAILED = 84;
+    int REPROCESS_WR = 85;
+    int CANCEL_PROCESS = 86;
+    int IMPORT_STARTED = 87;
+    int IMPORT_COMPLETED = 88;
+    int IMPORT_FAILED = 89;
+    int IMPORT_CANCELED = 90;
+
+    @Deprecated
+    int ADDED_TO_SEND = 91;
+
+    int START_GENERATING = 92;
+    int CANCEL_SENDING = 93;
+    int SCHEDULE_SENDING = 94;
+    int PACKAGE_DOWNLOAD_FAILED = 95;
+    int UPDATE_STATS = 96;
+
+    @Deprecated
+    int PUBLISH_DATE_UPDATED = 97;
+
+    int ARIES_ACKNOWLEDGEMENT_START = 98;
+
+    int PRODUCT_CREATED = 99;
+    int PRODUCT_DELETED = 100;
+    int PRODUCT_RETRACTED = 101;
+
+    int PRODUCT_RECEIVED = 102;
+    int PRODUCT_VALIDATED = 103;
+    int PRODUCT_NOTIFIED_ON_RECEIVED = 104;
+    int PRODUCT_UNPACKED = 105;
+    int PRODUCT_CONVERTED = 106;
+    int PRODUCT_RENDERED = 107;
+    int PRODUCT_SAVED = 108;
+    int PRODUCT_PUBLISHING_STARTED = 109;
+    int PRODUCT_SENT_WOLLIT = 110;
+    int PRODUCT_PUBLISHED_WOLLIT = 111;
+    int PRODUCT_SENT_HW = 112;
+    int PRODUCT_PUBLISHED_HW = 113;
+    int PRODUCT_NOTIFIED_ON_PUBLISHED = 114;
+    int PRODUCT_SENT_DS = 115;
+    int PRODUCT_ERROR = 116;
+    int PRODUCT_OFFLINE_HW = 117;
+
+    int PRODUCT_ARIES_ACK_ON_RECEIVED = 118;
+    int PRODUCT_ARIES_ACK_ON_PUBLISHED = 119;
+
+    int PRODUCT_SENT_HW_TO_WITHDRAW = 120;
+
+    int CONTENT_ONLINE = 121;
+
+    int PACKAGE_DOWNLOAD_FINISHED = 122;
+}

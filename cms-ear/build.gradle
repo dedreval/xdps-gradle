@@ -1,0 +1,32 @@
+plugins {
+    id 'ear'
+}
+
+dependencies {
+    deploy project(':cms-lib')
+
+    // Example of an external dependency that you want to include in the EAR's lib directory
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.3'
+}
+
+ear {
+    archiveBaseName.set('CMS')
+
+    // Configure the deployment descriptor
+    deploymentDescriptor {
+        applicationName = "CMS"
+    }
+
+    // Adjust META-INF contents manually
+    metaInf {
+        from('src/main/resources/META-INF/jboss-deployment-structure.xml')
+        from('src/main/resources/META-INF/application.xml')
+        from('src/main/resources/META-INF/MANIFEST.MF') // Automatically generated, but you can customize it
+    }
+
+    // Include runtime dependencies in the 'lib' directory inside the EAR
+    from('libs') {
+        into('lib') // This puts saxon.jar inside the lib directory of the EAR
+    }
+
+}

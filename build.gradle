@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example'
+version = '1.0.0'
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation platform('jakarta.platform:jakarta.jakartaee-bom:9.1.0')
+
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
