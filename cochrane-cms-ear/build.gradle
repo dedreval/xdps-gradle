@@ -1,0 +1,15 @@
+plugins {
+    id 'ear'
+}
+
+dependencies {
+    deploy project(path: ':cochrane-cms-lib')
+    deploy project(path: ':cochrane-cms-webapp', configuration: 'archives')
+}
+
+ear {
+    archiveBaseName.set('CochraneCMS')
+    deploymentDescriptor {
+        applicationName = "MyEnterpriseApp"
+    }
+}

@@ -3,9 +3,16 @@ plugins {
 }
 
 repositories {
-    mavenCentral()
+//    mavenCentral()
+//    maven {
+//        url "https://maven.artifacts.atlassian.com"
+//    }
     maven {
-        url "https://maven.artifacts.atlassian.com"
+        url "https://artifactory.aws.wiley.com/artifactory/gradle-local/"
+        credentials {
+            username = project.findProperty("artifactory_user") ?: ""
+            password = project.findProperty("artifactory_password") ?: ""
+        }
     }
 }
 

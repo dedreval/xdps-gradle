@@ -1,8 +1,8 @@
-rootProject.name = 'my-enterprise-project'
+rootProject.name = 'xdps-gradle'
 
 include 'cms-lib'
 include 'cms-ear'
-include 'my-library'
-include 'my-webapp'
-include 'my-ear'
+include 'cochrane-cms-ear'
+include 'cochrane-cms-lib'
+include 'cochrane-cms-webapp'
 

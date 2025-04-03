@@ -1,0 +1,23 @@
+plugins {
+    id 'war'
+}
+
+repositories {
+    flatDir {
+        dirs '../cochrane-cms-lib/libs/'  // Directory where your local JARs are stored
+    }
+}
+
+war {
+    archiveBaseName.set('CochraneCMS-data')
+}
+
+dependencies {
+    implementation project(':cochrane-cms-lib')
+    implementation 'org.apache.tapestry:tapestry-core:5.8.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    implementation files('../cochrane-cms-lib/libs/soap.jar')
+    implementation files('../cochrane-cms-lib/libs/archiews.jar')
+    implementation group: '', name: 'soap', version: '1.0'
+    implementation group: '', name: 'archiews', version: '1.0'
+}

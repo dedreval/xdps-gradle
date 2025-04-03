@@ -1,15 +1,6 @@
 plugins {
     id 'java-library'
 }
-//repositories {
-//    maven {
-//        url "https://artifactory.aws.wiley.com/ui/native/gradle-local/"
-//        credentials {
-//            username = System.getenv("ARTIFACTORY_USER")
-//            password = System.getenv("ARTIFACTORY_PASSWORD")
-//        }
-//    }
-//}
 
 repositories {
     mavenCentral()
@@ -19,9 +10,20 @@ repositories {
     maven {
         url 'https://repo1.maven.org/maven2'
     }
+    maven {
+        url "https://artifactory.aws.wiley.com/artifactory/gradle-local/"
+        credentials {
+            username = project.findProperty("artifactory_user") ?: ""
+            password = project.findProperty("artifactory_password") ?: ""
+        }
+    }
     flatDir {
         dirs 'libs'  // Directory where your local JARs are stored
     }
+}
+
+jar {
+    archiveBaseName.set('CochraneCMS')
 }
 
 dependencies {
@@ -46,8 +48,7 @@ dependencies {
     implementation 'com.sun.jersey:jersey-bundle:1.19.1'
     implementation 'com.sun.jersey.contribs:jersey-multipart:1.19'
     implementation 'org.apache.ant:ant:1.10.12'
-    //implementation 'com.wiley.im.convertors:convertors-interfaces:1.0.4'
-
+    implementation 'com.wiley.im.convertors:convertors-interfaces:1.0.4'
     implementation 'net.sourceforge.jexcelapi:jxl:2.6.12'//?
     implementation 'org.apache.axis:axis:1.4'//?
     implementation 'commons-net:commons-net:3.6'
@@ -55,18 +56,9 @@ dependencies {
     implementation 'org.apache.commons:commons-csv:1.8'
     implementation 'io.swagger.core.v3:swagger-annotations:2.0.7'
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
-    //implementation 'jakarta.mail:jakarta.mail-api:1.6.7'
     implementation 'javax.mail:javax.mail-api:1.5.6'
     implementation 'ch.ethz.ganymed:ganymed-ssh2:261'//originally 250
     implementation 'com.jcraft:jsch:0.1.55'
-
-//    implementation name: 'convertors-interfaces'
-//    implementation name: 'archiews'
-//    implementation name: 'batik-all-1.10'
-//    implementation name: 'soap'
-
-
-    implementation 'com.wiley.im.convertors:convertors-interfaces:1.0.4'
     implementation 'your.custom:archiews:1.0.0'  // Adjust according to the actual group and version
     implementation 'org.apache.xmlgraphics:batik-all:1.10'
     implementation 'your.custom:soap:1.0.0'

@@ -1,9 +1,3 @@
-plugins {
-    id 'java'
-}
-
-group = 'com.example'
-version = '1.0.0'
 
 subprojects {
     apply plugin: 'java'
@@ -12,9 +6,16 @@ subprojects {
         mavenCentral()
     }
 
+    tasks.withType(Jar).configureEach {
+        destinationDirectory = file("${rootProject.buildDir}")
+    }
+
+    tasks.register('cleanRootBuild', Delete) {
+        delete rootProject.buildDir
+    }
+
     dependencies {
         implementation platform('jakarta.platform:jakarta.jakartaee-bom:9.1.0')
-
         testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
     }
 
